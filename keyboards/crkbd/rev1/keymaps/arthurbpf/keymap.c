@@ -164,9 +164,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //,-----------------------------------------------------.                    ,-----------------------------------------------------.
      LMOD0,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,              CLIP_RDO, CLIP_PST, CLIP_CPY, CLIP_CUT, CLIP_UND, _______,
 //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     LMOD1,    LMOD2,   LMOD3,   LMOD4,   KC_NO,   KC_NO,              KC_NO,    MS_LEFT,  MS_DOWN,  MS_UP,    MS_RIGHT, _______,
+     LMOD1,    LMOD2,   LMOD3,   LMOD4,   KC_NO,   KC_NO,              KC_NO,    MS_LEFT,  MS_DOWN,  MS_UP,    MS_RGHT,  _______,
 //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     _______,  KC_NO,   KC_ALGR, KC_NO,   KC_NO,   KC_NO,              KC_NO,    MS_WH_LEFT, MS_WH_DOWN, MS_WH_UP, MS_WH_RIGHT, _______,
+     _______,  KC_NO,   KC_ALGR, KC_NO,   KC_NO,   KC_NO,              KC_NO,    MS_WHLL,  MS_WHLD,  MS_WHLU,  MS_WHLR,  _______,
 //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                               _______, _______, _______,  MS_BTN2,  MS_BTN1,  MS_BTN3
 //                                           `--------------------------'  `--------------------------'
@@ -261,16 +261,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //   Left:  Volume down/up, Prev/Next track
 //   Right: Mouse scroll down/up, Cursor left/right
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-    [_BASE]   = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU),  ENCODER_CCW_CW(KC_MPRV, KC_MNXT),  ENCODER_CCW_CW(MS_WH_DOWN, MS_WH_UP),  ENCODER_CCW_CW(KC_LEFT, KC_RGHT) },
-    [_EXTRA]  = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU),  ENCODER_CCW_CW(KC_MPRV, KC_MNXT),  ENCODER_CCW_CW(MS_WH_DOWN, MS_WH_UP),  ENCODER_CCW_CW(KC_LEFT, KC_RGHT) },
-    [_TAP]    = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU),  ENCODER_CCW_CW(KC_MPRV, KC_MNXT),  ENCODER_CCW_CW(MS_WH_DOWN, MS_WH_UP),  ENCODER_CCW_CW(KC_LEFT, KC_RGHT) },
-    [_BUTTON] = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU),  ENCODER_CCW_CW(KC_MPRV, KC_MNXT),  ENCODER_CCW_CW(MS_WH_DOWN, MS_WH_UP),  ENCODER_CCW_CW(KC_LEFT, KC_RGHT) },
-    [_NAV]    = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU),  ENCODER_CCW_CW(KC_MPRV, KC_MNXT),  ENCODER_CCW_CW(MS_WH_DOWN, MS_WH_UP),  ENCODER_CCW_CW(KC_LEFT, KC_RGHT) },
-    [_MOUSE]  = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU),  ENCODER_CCW_CW(KC_MPRV, KC_MNXT),  ENCODER_CCW_CW(MS_WH_DOWN, MS_WH_UP),  ENCODER_CCW_CW(KC_LEFT, KC_RGHT) },
-    [_MEDIA]  = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU),  ENCODER_CCW_CW(KC_MPRV, KC_MNXT),  ENCODER_CCW_CW(MS_WH_DOWN, MS_WH_UP),  ENCODER_CCW_CW(KC_LEFT, KC_RGHT) },
-    [_NUM]    = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU),  ENCODER_CCW_CW(KC_MPRV, KC_MNXT),  ENCODER_CCW_CW(MS_WH_DOWN, MS_WH_UP),  ENCODER_CCW_CW(KC_LEFT, KC_RGHT) },
-    [_SYM]    = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU),  ENCODER_CCW_CW(KC_MPRV, KC_MNXT),  ENCODER_CCW_CW(MS_WH_DOWN, MS_WH_UP),  ENCODER_CCW_CW(KC_LEFT, KC_RGHT) },
-    [_FUN]    = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU),  ENCODER_CCW_CW(KC_MPRV, KC_MNXT),  ENCODER_CCW_CW(MS_WH_DOWN, MS_WH_UP),  ENCODER_CCW_CW(KC_LEFT, KC_RGHT) },
-    [_GAME]   = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU),  ENCODER_CCW_CW(KC_MPRV, KC_MNXT),  ENCODER_CCW_CW(MS_WH_DOWN, MS_WH_UP),  ENCODER_CCW_CW(KC_LEFT, KC_RGHT) },
+    [_BASE]   = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU),  ENCODER_CCW_CW(KC_MPRV, KC_MNXT),  ENCODER_CCW_CW(MS_WHLD, MS_WHLU),  ENCODER_CCW_CW(KC_LEFT, KC_RGHT) },
+    [_EXTRA]  = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU),  ENCODER_CCW_CW(KC_MPRV, KC_MNXT),  ENCODER_CCW_CW(MS_WHLD, MS_WHLU),  ENCODER_CCW_CW(KC_LEFT, KC_RGHT) },
+    [_TAP]    = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU),  ENCODER_CCW_CW(KC_MPRV, KC_MNXT),  ENCODER_CCW_CW(MS_WHLD, MS_WHLU),  ENCODER_CCW_CW(KC_LEFT, KC_RGHT) },
+    [_BUTTON] = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU),  ENCODER_CCW_CW(KC_MPRV, KC_MNXT),  ENCODER_CCW_CW(MS_WHLD, MS_WHLU),  ENCODER_CCW_CW(KC_LEFT, KC_RGHT) },
+    [_NAV]    = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU),  ENCODER_CCW_CW(KC_MPRV, KC_MNXT),  ENCODER_CCW_CW(MS_WHLD, MS_WHLU),  ENCODER_CCW_CW(KC_LEFT, KC_RGHT) },
+    [_MOUSE]  = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU),  ENCODER_CCW_CW(KC_MPRV, KC_MNXT),  ENCODER_CCW_CW(MS_WHLD, MS_WHLU),  ENCODER_CCW_CW(KC_LEFT, KC_RGHT) },
+    [_MEDIA]  = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU),  ENCODER_CCW_CW(KC_MPRV, KC_MNXT),  ENCODER_CCW_CW(MS_WHLD, MS_WHLU),  ENCODER_CCW_CW(KC_LEFT, KC_RGHT) },
+    [_NUM]    = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU),  ENCODER_CCW_CW(KC_MPRV, KC_MNXT),  ENCODER_CCW_CW(MS_WHLD, MS_WHLU),  ENCODER_CCW_CW(KC_LEFT, KC_RGHT) },
+    [_SYM]    = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU),  ENCODER_CCW_CW(KC_MPRV, KC_MNXT),  ENCODER_CCW_CW(MS_WHLD, MS_WHLU),  ENCODER_CCW_CW(KC_LEFT, KC_RGHT) },
+    [_FUN]    = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU),  ENCODER_CCW_CW(KC_MPRV, KC_MNXT),  ENCODER_CCW_CW(MS_WHLD, MS_WHLU),  ENCODER_CCW_CW(KC_LEFT, KC_RGHT) },
+    [_GAME]   = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU),  ENCODER_CCW_CW(KC_MPRV, KC_MNXT),  ENCODER_CCW_CW(MS_WHLD, MS_WHLU),  ENCODER_CCW_CW(KC_LEFT, KC_RGHT) },
 };
 #endif
