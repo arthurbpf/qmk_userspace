@@ -1,0 +1,70 @@
+[
+    {
+        "name": "Base (QWERTY + HRMs)",
+        "author": "Miryoku"
+    },
+    [
+        { "x": 0.5 },
+        "TAB",
+        { "x": 0.5 },
+        "Q",
+        "W",
+        "E",
+        "R",
+        "T",
+        { "x": 0.5 },
+        "Y",
+        "U",
+        "I",
+        "O",
+        "P",
+        { "x": 0.5 },
+        "BSPC"
+    ],
+    [
+        { "x": 0.5 },
+        "LCTL",
+        { "x": 0.5 },
+        "A\nGUI(h)",
+        "S\nALT(h)",
+        "D\nCTL(h)",
+        "F\nSFT(h)",
+        "G",
+        { "x": 0.5 },
+        "H",
+        "J\nSFT(h)",
+        "K\nCTL(h)",
+        "L\nALT(h)",
+        "'\nGUI(h)",
+        { "x": 0.5 },
+        "'"
+    ],
+    [
+        { "x": 0.5 },
+        "LSFT",
+        { "x": 0.5 },
+        "Z\nBTN(h)",
+        "X\nAGR(h)",
+        "C",
+        "V",
+        "B",
+        { "x": 0.5 },
+        "N",
+        "M",
+        ",",
+        ".\nAGR(h)",
+        "/\nBTN(h)",
+        { "x": 0.5 },
+        "ESC"
+    ],
+    [
+        { "y": 0.25, "x": 2.5 },
+        "Esc\nMed(h)",
+        "Spc\nNav(h)",
+        "Tab\nMou(h)",
+        { "x": 0.5 },
+        "Ent\nSym(h)",
+        "Bspc\nNum(h)",
+        "Del\nFun(h)"
+    ]
+]
