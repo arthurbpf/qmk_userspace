@@ -322,8 +322,10 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 #define TAP_SPEED 40
 #define ANIM_FRAME_DURATION 200
 #define ANIM_SIZE 512
+#define ANIM_SIZE_PADDED 1360
 
 static uint32_t anim_timer = 0;
+static char padded_buf[ANIM_SIZE_PADDED];
 static uint32_t anim_sleep = 0;
 static uint8_t  current_idle_frame = 0;
 static uint8_t  current_tap_frame = 0;
@@ -407,19 +409,27 @@ static void render_anim(void) {
         }
     };
 
+    void oled_write_frame_centered(const char *frame) {
+        memset(padded_buf, 0, ANIM_SIZE_PADDED);
+        for (uint8_t row = 0; row < 32; row++) {
+            memcpy_P(padded_buf + (row + 18) * 20 + 2, frame + row * 16, 16);
+        }
+        oled_write_raw(padded_buf, ANIM_SIZE_PADDED);
+    }
+
     void animation_phase(void) {
         if (get_current_wpm() <= IDLE_SPEED) {
             current_idle_frame = (current_idle_frame + 1) % IDLE_FRAMES;
-            oled_write_raw_P(idle[abs((IDLE_FRAMES - 1) - current_idle_frame)], ANIM_SIZE);
+            oled_write_frame_centered(idle[abs((IDLE_FRAMES - 1) - current_idle_frame)]);
         }
 
         if (get_current_wpm() > IDLE_SPEED && get_current_wpm() < TAP_SPEED) {
-            oled_write_raw_P(prep[0], ANIM_SIZE);
+            oled_write_frame_centered(prep[0]);
         }
 
         if (get_current_wpm() >= TAP_SPEED) {
             current_tap_frame = (current_tap_frame + 1) % TAP_FRAMES;
-            oled_write_raw_P(tap[abs((TAP_FRAMES - 1) - current_tap_frame)], ANIM_SIZE);
+            oled_write_frame_centered(tap[abs((TAP_FRAMES - 1) - current_tap_frame)]);
         }
     }
 
