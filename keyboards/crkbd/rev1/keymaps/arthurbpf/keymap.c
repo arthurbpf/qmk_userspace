@@ -315,6 +315,7 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 #endif
 
 #ifdef OLED_ENABLE
+#include <string.h>
 
 // WPM / keylogger state
 static uint16_t oled_activity_timer = 0;
