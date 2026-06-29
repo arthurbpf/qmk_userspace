@@ -322,7 +322,7 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 #define TAP_SPEED 40
 #define ANIM_FRAME_DURATION 200
 #define ANIM_SIZE 512
-#define OLED_BUF_SIZE 1024
+#define OLED_BUF_SIZE 1280
 
 static uint32_t anim_timer = 0;
 static char padded_buf[OLED_BUF_SIZE];
@@ -411,7 +411,9 @@ static void render_anim(void) {
 
     void oled_write_frame_centered(const char *frame) {
         memset(padded_buf, 0, OLED_BUF_SIZE);
-        memcpy_P(padded_buf + 256, frame, 512);
+        for (uint8_t page = 0; page < 4; page++) {
+            memcpy_P(padded_buf + (page + 2) * 160 + 16, frame + page * 128, 128);
+        }
         oled_write_raw(padded_buf, OLED_BUF_SIZE);
     }
 
