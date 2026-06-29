@@ -458,7 +458,7 @@ bool oled_task_user(void) {
     } else {
         render_anim();
     }
-    return true;
+    return false;
 }
 
 #endif
