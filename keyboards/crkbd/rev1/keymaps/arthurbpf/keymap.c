@@ -342,15 +342,13 @@ static void render_status(void) {
     const char *names[] = {"BASE", "EXTRA", "TAP",  "BUTTON", "NAV",  "MOUSE",
                            "MEDIA", "NUM",   "SYM", "FUN",    "GAME"};
 
-    oled_write_P(PSTR("      "), false);
-    oled_write_P(PSTR("    "), false);
+    oled_set_cursor(0, 2);
+    oled_write_P(PSTR("WPM: "), false);
     sprintf(wpm_str, "%03d", get_current_wpm());
     oled_write(wpm_str, false);
-    oled_write_P(PSTR("  WPM \n \n"), false);
-    oled_write_P(PSTR("      \n"), false);
 
-    oled_write_P(PSTR("LAYER"), false);
-    oled_write_P(PSTR("      \n"), false);
+    oled_set_cursor(0, 5);
+    oled_write_P(PSTR("LAYER: "), false);
     oled_write(layer < 11 ? names[layer] : "?", false);
 }
 
